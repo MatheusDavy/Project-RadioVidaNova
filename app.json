@@ -1,4 +1,7 @@
 {
   "name": "RadioAparecida",
-  "displayName": "RadioAparecida"
+  "displayName": "RadioAparecida",
+  "packagerOpts": {
+    "config": "metro.config.js"
+  }
 }
