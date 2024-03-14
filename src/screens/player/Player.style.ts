@@ -9,14 +9,17 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    gap: 30,
     width: '100%',
     height: '100%',
-    backgroundColor: COLORS.blue300,
-    paddingHorizontal: SPACING.medium,
-    paddingVertical: SPACING.medium,
+    backgroundColor: COLORS.black,
+    paddingTop: SPACING.medium,
+    paddingBottom: 0,
+    margin: 0,
     position: 'relative',
   },
   TextWrapper: {
+    paddingHorizontal: SPACING.medium,
     display: 'flex',
     flexDirection: 'column',
     position: 'relative',
@@ -66,20 +69,11 @@ export const stylePlayer = StyleSheet.create({
 });
 
 export const styleActions = StyleSheet.create({
-  Blur: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    borderRadius: 20,
-    zIndex: 0,
-  },
-
   Wrapper: {
     maxWidth: 400,
     alignSelf: 'center',
     width: '100%',
+    height: 'auto',
     display: 'flex',
     flexDirection: 'column',
     paddingVertical: SPACING.medium,

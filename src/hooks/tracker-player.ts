@@ -11,7 +11,8 @@ export const tracks = [
     id: 'radio-master-audio',
     url: 'http://142.44.137.193:8376/stream',
     artist: 'Radio Master',
-    artwork: require('../../assets/img/background/bg-01.jpg'),
+    artwork:
+      'https://img.freepik.com/free-vector/glowing-musical-pentagram-background-with-sound-notes_1017-31220.jpg',
     isLiveStream: true,
   },
 ];
