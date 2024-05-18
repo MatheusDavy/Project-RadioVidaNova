@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity, SafeAreaView, Image} from 'react-native';
 import {styles} from './Home.style';
 import {Icons} from '../../components/Icon';
+import {CaretCircleRight} from 'phosphor-react-native';
 
 type Props = {
   navigation: any;
@@ -26,7 +27,7 @@ export default function HomeScreen({navigation}: Props) {
         style={styles.Button}
         onPress={() => navigation.navigate('Player')}>
         <Text style={styles.ButtonText}>Iniciar</Text>
-        <Icons style={styles.ButtonIcon} name="rightcircleo" size={32} />
+        <Icons style={styles.ButtonIcon} icon={CaretCircleRight} size={32} />
       </TouchableOpacity>
     </SafeAreaView>
   );

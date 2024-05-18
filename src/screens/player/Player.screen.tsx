@@ -13,6 +13,7 @@ import {COLORS} from '../../styles/theme-variables';
 import {formatSeconds, tracks} from '../../hooks/tracker-player';
 import Slider from '@react-native-community/slider';
 import LinearGradient from 'react-native-linear-gradient';
+import {Play, Pause, FastForward} from 'phosphor-react-native';
 
 export default function PlayerScreen() {
   const playerState = usePlaybackState();
@@ -87,9 +88,7 @@ export default function PlayerScreen() {
             thumbTintColor={'#ae100a'}
           />
           <View style={styleActions.WaveTimer}>
-            <Text style={{color: COLORS.white}}>
-              {formatSeconds(position)}
-            </Text>
+            <Text style={{color: COLORS.white}}>{formatSeconds(position)}</Text>
           </View>
         </View>
         <View style={styleActions.ButtonWrapper}>
@@ -103,17 +102,21 @@ export default function PlayerScreen() {
               }
             }}>
             <Icons
-              name={
-                playerState.state === State.Playing ? 'pause' : 'caretright'
-              }
+              icon={playerState.state == State.Playing ? Pause : Play}
               color={COLORS.gray400}
               size={30}
+              type={'fill'}
             />
           </TouchableOpacity>
           <TouchableOpacity
             style={styleActions.ButtonAction}
             onPress={() => setToLive()}>
-            <Icons name="forward" size={25} color={COLORS.white} />
+            <Icons
+              icon={FastForward}
+              size={25}
+              color={COLORS.white}
+              type={'fill'}
+            />
           </TouchableOpacity>
         </View>
       </View>
