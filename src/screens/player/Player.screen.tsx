@@ -1,23 +1,26 @@
-import React, {useEffect} from 'react';
-import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
+import React, { useEffect } from 'react';
+import {
+  Image,
+  ImageBackground,
+  SafeAreaView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import TrackPlayer, {
   AppKilledPlaybackBehavior,
   Capability,
   State,
   usePlaybackState,
-  useProgress,
 } from 'react-native-track-player';
 import {styleActions, styles} from './Player.style';
 import {Icons} from '../../components/Icon';
 import {COLORS} from '../../styles/theme-variables';
-import {formatSeconds, tracks} from '../../hooks/tracker-player';
-import Slider from '@react-native-community/slider';
-import LinearGradient from 'react-native-linear-gradient';
-import {Play, Pause, FastForward} from 'phosphor-react-native';
+import {tracks} from '../../hooks/tracker-player';
+import {Play, Pause} from 'phosphor-react-native';
 
 export default function PlayerScreen() {
   const playerState = usePlaybackState();
-  const {position} = useProgress();
 
   const setUpTrackPlayer = async () => {
     try {
@@ -59,80 +62,45 @@ export default function PlayerScreen() {
     <SafeAreaView style={styles.Wrapper}>
       <Image
         style={styles.Background}
-        source={require('../../../assets/img/background/bg-01.jpg')}
+        source={require('../../../assets/img/background/background.png')}
       />
 
       {/* Brand */}
-      <View style={styles.TextWrapper}>
-        <Text style={{...styles.Text, fontSize: 20, lineHeight: 30}}>
-          Rádio
-        </Text>
-        <Text style={{...styles.Text, fontSize: 30, lineHeight: 43}}>
-          VidaNova
-        </Text>
-      </View>
+      <Image
+        style={styles.Logo}
+        source={require('../../../assets/img/logo.png')}
+      />
 
       <View style={styleActions.Wrapper}>
-        <Text style={{...styles.Text, fontSize: 30, lineHeight: 43}}>
-          VidaNova
+        <Text style={styleActions.Text}>
+          103,1 FM 103,1 FM 103,1 FM 103,1 FM 103,1 FM 103,1 FM 103,1 FM
+          <Text style={{color: COLORS.white}}> 103,1 FM </Text>
+          FM 103,1 FM 103,1 FM 103,1 FM
         </Text>
-        <Text style={styleActions.Author}>Radio</Text>
-        <View style={styleActions.WaveWrapper}>
-          <Slider
-            style={styleActions.WaveProgress}
-            minimumValue={0}
-            maximumValue={position}
-            value={position}
-            minimumTrackTintColor={'#ae100a'}
-            maximumTrackTintColor={COLORS.white}
-            thumbTintColor={'#ae100a'}
-          />
-          <View style={styleActions.WaveTimer}>
-            <Text style={{color: COLORS.white}}>{formatSeconds(position)}</Text>
+        <ImageBackground
+          source={require('../../../assets/img/background/actions.png')}
+          resizeMode="cover"
+          style={styleActions.Background}>
+          <View style={styleActions.ButtonWrapper}>
+            <TouchableOpacity
+              style={styleActions.ButtonMainAction}
+              onPress={() => {
+                if (playerState.state == State.Playing) {
+                  TrackPlayer.pause();
+                } else {
+                  setToLive();
+                }
+              }}>
+              <Icons
+                icon={playerState.state == State.Playing ? Pause : Play}
+                color={COLORS.white}
+                size={45}
+                type={'fill'}
+              />
+            </TouchableOpacity>
           </View>
-        </View>
-        <View style={styleActions.ButtonWrapper}>
-          <TouchableOpacity
-            style={styleActions.ButtonMainAction}
-            onPress={() => {
-              if (playerState.state == State.Playing) {
-                TrackPlayer.pause();
-              } else {
-                TrackPlayer.play();
-              }
-            }}>
-            <Icons
-              icon={playerState.state == State.Playing ? Pause : Play}
-              color={COLORS.gray400}
-              size={30}
-              type={'fill'}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styleActions.ButtonAction}
-            onPress={() => setToLive()}>
-            <Icons
-              icon={FastForward}
-              size={25}
-              color={COLORS.white}
-              type={'fill'}
-            />
-          </TouchableOpacity>
-        </View>
+        </ImageBackground>
       </View>
-
-      <LinearGradient
-        style={{
-          width: '100%',
-          height: 500,
-          padding: 0,
-          margin: 0,
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-        }}
-        colors={['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)', 'rgba(0, 0, 0, 1)']}
-      />
     </SafeAreaView>
   );
 }

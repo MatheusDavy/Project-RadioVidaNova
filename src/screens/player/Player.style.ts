@@ -8,27 +8,24 @@ export const styles = StyleSheet.create({
   Wrapper: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     gap: 30,
     width: '100%',
     height: '100%',
     backgroundColor: COLORS.black,
-    paddingTop: SPACING.medium,
-    paddingBottom: 0,
+    paddingVertical: SPACING.medium,
     margin: 0,
     position: 'relative',
   },
-  TextWrapper: {
-    paddingHorizontal: SPACING.medium,
-    display: 'flex',
-    flexDirection: 'column',
-    position: 'relative',
-    zIndex: 1,
-    gap: 0,
-  },
-  Text: {
-    color: COLORS.white,
-    fontFamily: FONT_FAMILY.pacifico,
+  Logo: {
+    position: 'absolute',
+    width: 150,
+    height: 60,
+    objectFit: 'contain',
+    left: '50%',
+    top: 40,
+    zIndex: 2,
+    transform: [{translateX: -75}],
   },
   Background: {
     width: WIDTH_SCREEN,
@@ -41,82 +38,27 @@ export const styles = StyleSheet.create({
   },
 });
 
-export const stylePlayer = StyleSheet.create({
-  PlayerWrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  PlayerImage: {
-    width: WIDTH_SCREEN,
-    height: WIDTH_SCREEN,
-    maxWidth: 307,
-    maxHeight: 307,
-    borderRadius: 1000,
-    backgroundColor: COLORS.gray400,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  PlayerText: {
-    fontSize: 20,
-    fontWeight: '300',
-    color: COLORS.gray400,
-    textAlign: 'center',
-  },
-});
-
 export const styleActions = StyleSheet.create({
   Wrapper: {
+    width: '90%',
     maxWidth: 400,
-    alignSelf: 'center',
-    width: '100%',
     height: 'auto',
+
     display: 'flex',
-    flexDirection: 'column',
-    paddingVertical: SPACING.medium,
-    paddingHorizontal: SPACING.medium,
-    borderRadius: 20,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+
     position: 'relative',
     zIndex: 1,
   },
-  Title: {
-    fontSize: 25,
-    fontWeight: '800',
-    color: COLORS.white,
-    fontFamily: FONT_FAMILY.pacifico,
-  },
-  Author: {
-    fontSize: 16,
-    fontWeight: '300',
-    color: COLORS.white,
-    marginTop: 3,
-    fontFamily: FONT_FAMILY.poppins,
-  },
-
-  WaveWrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+  Background: {
+    width: 130,
+    height: 130,
     justifyContent: 'center',
-    gap: 10,
-    marginTop: 40,
-    position: 'relative',
+    alignSelf: 'center',
   },
-  WaveProgress: {
-    width: '110%',
-    height: 2,
-  },
-  WaveTimer: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-
   ButtonWrapper: {
     width: '100%',
     display: 'flex',
@@ -124,25 +66,20 @@ export const styleActions = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
-    zIndex: 1,
-    marginTop: 20,
+    zIndex: 2,
   },
   ButtonMainAction: {
-    width: 70,
-    height: 70,
-    borderRadius: 10000,
-    backgroundColor: COLORS.white,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  ButtonAction: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 5,
+  Text: {
+    transform: [{translateX: -45}],
     position: 'absolute',
-    left: '70%',
+    zIndex: 0,
+    fontSize: 20,
+    color: COLORS.gray400,
+    fontFamily: FONT_FAMILY.jakarta,
+    letterSpacing: 2,
   },
 });

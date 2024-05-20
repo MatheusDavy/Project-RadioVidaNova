@@ -2,16 +2,8 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "assets/fonts/Pacifico-Regular.ttf",
-      "sha1": "baca1fca7fe74b61cb33aa0da48ec1a3a77bcf49"
-    },
-    {
-      "path": "assets/fonts/Poppins-Bold.ttf",
-      "sha1": "875cf0cecd647bcf22e79d633d868c1b1ec98dfa"
-    },
-    {
-      "path": "assets/fonts/Poppins-Regular.ttf",
-      "sha1": "fdd3002e7d814ee47c1c1b8487c72c6bbb3a2d00"
+      "path": "assets/fonts/Plus-Jakarta-Sans-Regular.ttf",
+      "sha1": "f9292b9fb01731811fe12635ec5445a8fed9475e"
     }
   ]
 }

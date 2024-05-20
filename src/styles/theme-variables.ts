@@ -13,6 +13,5 @@ export const SPACING = {
 };
 
 export const FONT_FAMILY = {
-  poppins: 'Poppins-Regular',
-  pacifico: 'Pacifico-Regular',
+  jakarta: 'Plus-Jakarta-Sans-Regular',
 };

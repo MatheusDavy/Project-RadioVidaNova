@@ -8,11 +8,10 @@ export const formatSeconds = (seconds: number): string => {
 
 export const tracks = [
   {
-    id: 'radio-master-audio',
+    id: 'radio-vida-nova',
     url: 'http://142.44.137.193:8376/stream',
-    artist: 'Radio Master',
-    artwork:
-      'https://img.freepik.com/free-vector/glowing-musical-pentagram-background-with-sound-notes_1017-31220.jpg',
+    artist: 'Radio Vida Nova',
+    artwork: 'https://ibb.co/nD3KBnF',
     isLiveStream: true,
   },
 ];

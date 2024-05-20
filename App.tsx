@@ -17,11 +17,6 @@ export default function App() {
           headerShown: false,
         }}>
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{animation: 'slide_from_bottom'}}
-        />
-        <Stack.Screen
           name="Player"
           component={PlayerScreen}
           options={{animation: 'slide_from_right'}}

@@ -49,9 +49,7 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Pacifico-Regular.ttf</string>
-		<string>Poppins-Bold.ttf</string>
-		<string>Poppins-Regular.ttf</string>
+		<string>Plus-Jakarta-Sans-Regular.ttf</string>
 	</array>
 </dict>
 </plist>
