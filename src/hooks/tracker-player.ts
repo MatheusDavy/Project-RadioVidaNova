@@ -11,7 +11,7 @@ export const tracks = [
     id: 'radio-vida-nova',
     url: 'http://142.44.137.193:8376/stream',
     artist: 'Radio Vida Nova',
-    artwork: 'https://ibb.co/nD3KBnF',
+    artwork: 'https://i.ibb.co/sF5XC6Z/artwork-radio-aparecida.png',
     isLiveStream: true,
   },
 ];
